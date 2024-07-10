@@ -1,0 +1,324 @@
+<FloatLayout>
+
+
+    Image:
+        id: weather_image
+        source: 'image/солнце облака.png'
+        allow_stretch: True
+        keep_ratio: False
+
+    Label:
+        id: city_id
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        text: ''
+        pos_hint: {'center_x': 0.2, 'center_y': 0.9}
+        font_size: min(root.width, root.height) * 0.05
+        color: (0, 0, 0, 1)
+        halign: 'center'
+
+    Label:
+        id: time_id
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        text: ''
+        pos_hint: {'center_x': 0.2, 'center_y': 0.8}
+        font_size: min(root.width, root.height) * 0.05
+        color: (0, 0, 0, 1)
+        halign: 'center'
+
+    Label:
+        id: data_id
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        text: ''
+        pos_hint: {'center_x': 0.2, 'center_y': 0.7}
+        font_size: min(root.width, root.height) * 0.05
+        color: (0, 0, 0, 1)
+        halign: 'center'
+
+    Label:
+        id: feels_like
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        text: ''
+        pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+        font_size: min(root.width, root.height) * 0.05
+        color: (0, 0, 0, 1)
+        halign: 'center'
+
+    Label:
+        id: humidity
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        text: ''
+        pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+        font_size: min(root.width, root.height) * 0.05
+        color: (0, 0, 0, 1)
+        halign: 'center'
+
+    TextInput:
+        id: text_id
+        size_hint: 0.8, 0.1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.25}
+        multiline: False
+
+    EnterButton:
+        text: 'Показать'
+        size_hint: 0.4, 0.1
+        pos_hint: {'center_x': 0.3, 'center_y': 0.1}
+        on_release: root.press_me(text_id.text)
+
+    Button:
+        text: 'Выход'
+        size_hint: 0.4, 0.1
+        pos_hint: {'center_x': 0.7, 'center_y': 0.1}
+        on_press: app.stop()
+
+    Image:
+        id: icon
+        source: 'image/13d.png'
+        size_hint: 0.3, 0.3
+        pos_hint: {'center_x': 0.8, 'top': 0.9}
+
+    Label:
+        id: label_id
+        font_name: "font/BELLB"
+        text: ''
+        pos_hint: {'center_x': 0.8, 'center_y': 0.7}
+        font_size: min(root.width, root.height) * 0.05
+        color: (0, 0, 0, 1)
+        halign: 'center'
+
+    Image:
+        id: icon_wind
+        source: 'image/wind.png'
+        size_hint: 0.1, 0.1
+        pos_hint: {'center_x': 0.35, 'center_y': 0.7}
+    Label:
+        id: wind
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        text: ''
+        pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+        font_size: min(root.width, root.height) * 0.05
+        color: (0, 0, 0, 1)
+        halign: 'center'
+
+
+# погода на 5 дней
+
+    Image:
+        id: pressur_1
+        source: 'image/давление.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.07, 'center_y': 0.45}
+    Label:
+        id: one_pressur
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.16, 'center_y': 0.45}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: icon_wind_1
+        source: 'image/wind.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.07, 'center_y': 0.4}
+    Label:
+        id: one_win
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.13, 'center_y': 0.4}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Label:
+        id: one
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.07, 'center_y': 0.35}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: temp_1
+        source: 'image/thermometer.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.07, 'center_y': 0.51}
+    Label:
+        id: one_temp
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.13, 'center_y': 0.51}
+        color: (0, 0, 0, 1)
+        text: ''
+
+
+
+    Image:
+        id: pressur_2
+        source: 'image/давление.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.25, 'center_y': 0.45}
+    Label:
+        id: two_pressur
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.35, 'center_y': 0.45}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: icon_wind_2
+        source: 'image/wind.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.25, 'center_y': 0.4}
+    Label:
+        id: two_win
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.32, 'center_y': 0.4}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Label:
+        id: two
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.25, 'center_y': 0.35}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: temp_2
+        source: 'image/thermometer.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.25, 'center_y': 0.51}
+    Label:
+        id: two_temp
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.32, 'center_y': 0.51}
+        color: (0, 0, 0, 1)
+        text: ''
+
+
+
+    Image:
+        id: pressur_3
+        source: 'image/давление.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.45, 'center_y': 0.45}
+    Label:
+        id: three_pressur
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.55, 'center_y': 0.45}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: icon_wind_3
+        source: 'image/wind.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.45, 'center_y': 0.4}
+    Label:
+        id: three_win
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.52, 'center_y': 0.4}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Label:
+        id: three
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.45, 'center_y': 0.35}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: temp_3
+        source: 'image/thermometer.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.45, 'center_y': 0.51}
+    Label:
+        id: three_temp
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.52, 'center_y': 0.51}
+        color: (0, 0, 0, 1)
+        text: ''
+
+
+
+    Image:
+        id: pressur_4
+        source: 'image/давление.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.65, 'center_y': 0.45}
+    Label:
+        id: four_pressur
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.75, 'center_y': 0.45}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: icon_wind_4
+        source: 'image/wind.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.65, 'center_y': 0.4}
+    Label:
+        id: four_win
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.72, 'center_y': 0.4}
+        color: (0, 0, 0, 1)
+        text: ''
+    Label:
+        id: four
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.65, 'center_y': 0.35}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: temp_4
+        source: 'image/thermometer.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.65, 'center_y': 0.51}
+    Label:
+        id: four_temp
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.72, 'center_y': 0.51}
+        color: (0, 0, 0, 1)
+        text: ''
+
+
+    Image:
+        id: pressur_5
+        source: 'image/давление.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.85, 'center_y': 0.45}
+    Label:
+        id: five_pressur
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.95, 'center_y': 0.45}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: icon_wind_5
+        source: 'image/wind.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.85, 'center_y': 0.4}
+    Label:
+        id: five_win
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.92, 'center_y': 0.4}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Label:
+        id: five
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.85, 'center_y': 0.35}
+        color: (0, 0, 0, 1)
+        text: ''
+
+    Image:
+        id: temp_5
+        source: 'image/thermometer.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {'center_x': 0.85, 'center_y': 0.51}
+    Label:
+        id: five_temp
+        font_name: "font/Alegreya-ExtraBoldItalic.ttf"
+        pos_hint: {'center_x': 0.92, 'center_y': 0.5}
+        color: (0, 0, 0, 1)
+        text: ''
